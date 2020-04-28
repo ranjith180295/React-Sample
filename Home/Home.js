@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';  
+
 class Home extends React.Component
 {
   constructor(props)
@@ -19,13 +21,16 @@ class Home extends React.Component
   
   render()
   {
-    const { userData} = this.state;
     return ( 
       <div>
-      <h1> Hi User, {userData.userName} </h1>
+      <h1> Hi User {this.state.userName}, </h1>
+
+      <p>
+          <Link to="/login">Logout</Link>
+      </p>
       </div>
      );
   };
 };
 
-export default Home;
+export { Home};
