@@ -33,4 +33,4 @@ class Home extends React.Component
   };
 };
 
-export { Home};
+export default Home;
