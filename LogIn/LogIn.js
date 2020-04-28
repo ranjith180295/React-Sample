@@ -33,6 +33,8 @@ ValidateLogin()
   if(username =="Ranjith" && password =="123")
   {
     localStorage.setItem('user', username);
+
+    localStorage.setItem('isLoggedin', 1);
 debugger;
     this.props.history.push('/Home');
   }
@@ -61,10 +63,10 @@ handleChange(event) {
   render()
   {
     const { username, password, logInClick, error } = this.state;
- 
-    return (<div className="divMain"> 
+ let a = localStorage.getItem('isLoggedin') != 0 ? 'display:none' : 'display:block';
+    return (<div className="divMain" style={{a}}> 
     <h2>Login</h2>
-    <div className="divtxtBox">
+    <div className="divtxtBox" >
       <input className="txtBox" name="username"  type="text" id="txtLogInID" placeholder="Enter Name" value={this.state.username} onChange = {this.handleChange}/>      
       {logInClick && !username && <div className="ErrorClass">
       User Name is Required </div>}
