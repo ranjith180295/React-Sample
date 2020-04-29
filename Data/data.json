@@ -1,9 +1,13 @@
 {
-  "UserId": "1",  
-  "FirstName": "Ranjith",  
-  "LastName": "GR",  
-  "EmailId": "dsad@dad.cc",  
-  "MobileNo": "2342342",  
-  "Address": "cxvxcvxc",  
-  "PinCode": "4234"
+  "UserData" :[
+    {
+      "UserId": "1",  
+      "FirstName": "Ranjith",  
+      "LastName": "GR",  
+      "EmailId": "dsad@dad.cc",  
+      "MobileNo": "2342342",  
+      "Address": "cxvxcvxc",  
+      "PinCode": "4234"
+    }
+  ]
 }

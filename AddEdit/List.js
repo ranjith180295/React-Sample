@@ -1,5 +1,5 @@
 import React from 'react';
-import data from './Data/data';
+import {data} from '../Data/data.json';
 
 class LstData extends React.Component
 {
@@ -13,7 +13,9 @@ class LstData extends React.Component
   }
 
   componentDidMount(){  
-    this.setstate({users: data});
+    debugger;
+    this.setState({users: data});
+    console.log(data);
   };
 
   deleteUser(UserId)
@@ -54,21 +56,21 @@ class LstData extends React.Component
       </thead>
       <tbody>
         {
-          userData.map(user=>
-          (
-            <tr key={user.UserId}>  
-                <td>{user.FirstName}</td>  
-                <td>{user.LastName}</td>  
-                <td>{user.EmailId}</td>  
-                <td>{user.MobileNo}</td>  
-                <td>{user.Address}</td>  
-                <td>{user.PinCode}</td>  
-                <td><Button >Edit</Button>       
-                <Button onClick={() => this.deleteUser(user.UserId)}>Delete</Button> 
-                </td>
-              </tr>
-          )
-          )
+          // userData.map(user=>
+          // (
+          //   <tr key={user.UserId}>  
+          //       <td>{user.FirstName}</td>  
+          //       <td>{user.LastName}</td>  
+          //       <td>{user.EmailId}</td>  
+          //       <td>{user.MobileNo}</td>  
+          //       <td>{user.Address}</td>  
+          //       <td>{user.PinCode}</td>  
+          //       <td><Button >Edit</Button>       
+          //       <Button onClick={() => this.deleteUser(user.UserId)}>Delete</Button> 
+          //       </td>
+          //     </tr>
+          // )
+          // )
         }
       </tbody>
     </table>
