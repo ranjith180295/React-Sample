@@ -18,7 +18,7 @@ class LstData extends React.Component
 
   deleteUser(UserId)
   {
-
+    this.setstate({users: null});
   };
 
   render()

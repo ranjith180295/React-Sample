@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React from 'react';
+import { render } from 'react-dom';
+import LstData from './TableData/TableData';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';  
 
 class Home extends React.Component
@@ -28,6 +29,10 @@ class Home extends React.Component
       <p>
           <Link to="/login">Logout</Link>
       </p>
+      
+      <div >
+        <LstData />
+      </div>
       </div>
      );
   };

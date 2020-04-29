@@ -88,11 +88,11 @@ handleChange(event) {
   };
 }
 
-class LogInFinalComp extends React.Component{
-render()
-{
-  return ( <LoginCom/>);
-};
-};
+// class LogInFinalComp extends React.Component{
+// render()
+// {
+//   return ( <LoginCom/>);
+// };
+// };
 
-export default LogInFinalComp;
+export default LoginCom;
