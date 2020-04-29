@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import LstData from './TableData/TableData';
+import LstData from '../AddEdit/List';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';  
 
 class Home extends React.Component
