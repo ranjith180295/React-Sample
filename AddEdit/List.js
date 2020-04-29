@@ -1,5 +1,7 @@
 import React from 'react';
-import {data} from '../Data/data.json';
+import data from '../Data/data.json';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';  
+import Home from '../Home/Home';
 
 class LstData extends React.Component
 {
@@ -14,8 +16,10 @@ class LstData extends React.Component
 
   componentDidMount(){  
     debugger;
-    this.setState({users: data});
-    console.log(data);
+
+    this.setState({users: Object.values(data.UsersData)});
+    debugger;
+    console.log(this.state);
   };
 
   deleteUser(UserId)
@@ -23,10 +27,17 @@ class LstData extends React.Component
 
   };
 
+  AddUsers(
+    
+  )
+
   render()
   {
-    const {userData ,error } = this.state;
+    const {users ,error } = this.state;
     return (<div> 
+    <input type="button" value ="Add Users" onClick={this.AddUsers} />
+      <Route path="/Home" exact component={Home} />
+
     <table>
       <thead>
       <tr>
@@ -56,21 +67,22 @@ class LstData extends React.Component
       </thead>
       <tbody>
         {
-          // userData.map(user=>
-          // (
-          //   <tr key={user.UserId}>  
-          //       <td>{user.FirstName}</td>  
-          //       <td>{user.LastName}</td>  
-          //       <td>{user.EmailId}</td>  
-          //       <td>{user.MobileNo}</td>  
-          //       <td>{user.Address}</td>  
-          //       <td>{user.PinCode}</td>  
-          //       <td><Button >Edit</Button>       
-          //       <Button onClick={() => this.deleteUser(user.UserId)}>Delete</Button> 
-          //       </td>
-          //     </tr>
-          // )
-          // )
+          this.state.users.map(user=>
+          (
+            <tr key={user.UserId}>  
+                <td>{user.FirstName}</td>  
+                <td>{user.LastName}</td>  
+                <td>{user.EmailId}</td>  
+                <td>{user.MobileNo}</td>  
+                <td>{user.Address}</td>  
+                <td>{user.PinCode}</td>  
+                <td>
+                <input type="button" value="Edit"/>   
+                <input type="button" onClick={() => this.deleteUser(user.UserId)} value="Delete"/>     
+                </td>
+              </tr>
+          )
+          )
         }
       </tbody>
     </table>

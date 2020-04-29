@@ -12,8 +12,8 @@ render()
     <div>
 <Router>
     <div>
-        <Route path="/Home" component={Home} />
-        <Route path="/" component={LoginCom} />
+        <Route path="/Home" exact component={Home} />
+        <Route path="/" exact component={LoginCom} />
     </div>
 </Router>
 </div>
