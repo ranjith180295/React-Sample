@@ -14,7 +14,6 @@ class Home extends React.Component
   }
 
   componentDidMount() {
-    debugger
       this.setState({ 
         userName : localStorage.getItem('user')
       });
