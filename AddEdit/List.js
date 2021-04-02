@@ -3,6 +3,33 @@ import data from "../Data/data.json";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "../Home/Home";
 import AddUsers from "./Add";
+import { DataGrid } from "@material-ui/data-grid";
+
+const columns = [
+  { field: "id", headerName: "ID", width: 70 },
+  { field: "FirstName", headerName: "First name", width: 130 },
+  { field: "LastName", headerName: "Last name", width: 130 },
+  { field: "EmailId", headerName: "EMail", width: 130 },
+  { field: "MobileNo", headerName: "Mobile No", width: 130 },
+  { field: "Address", headerName: "Address", width: 130 },
+  { field: "PinCode", headerName: "Pin Code", width: 130 },
+  {
+    field: "age",
+    headerName: "Age",
+    type: "number",
+    width: 90
+  },
+  {
+    field: "FirstName",
+    headerName: "Full name",
+    description: "This column has a value getter and is not sortable.",
+    sortable: false,
+    width: 160,
+    valueGetter: params =>
+      `${params.getValue("FirstName") || ""} ${params.getValue("LastName") ||
+        ""}`
+  }
+];
 
 class LstData extends React.Component {
   constructor(props) {

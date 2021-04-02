@@ -12,18 +12,33 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({
-      userName: localStorage.getItem("user")
-    });
+    if (localStorage.getItem("user") != "") {
+      this.setState({
+        userName: localStorage.getItem("user")
+      });
+    } else {
+      alert("Not Authorized to access thi page.!");
+      this.props.history.push("/");
+    }
   }
 
+  Click_Logout() {
+    localStorage.setItem("user", "");
+
+    localStorage.setItem("isLoggedin", 0);
+
+    debugger;
+    //this.props.history.push("/");
+  }
   render() {
     return (
       <div>
         <h1> Hi User {this.state.userName}, </h1>
 
         <p>
-          <Link to="/">Logout</Link>
+          <Link onClick={this.Click_Logout} to="/">
+            Logout
+          </Link>
         </p>
 
         <div>
